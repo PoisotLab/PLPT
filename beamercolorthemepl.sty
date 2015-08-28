@@ -1,0 +1,88 @@
+% Beamer mtheme
+%
+% Copyright 2014 Matthias Vogelgesang
+% Licensed under CC-BY-SA 4.0 International.
+%
+% The initial template comes from the HSRM beamer theme by Benjamin Weiss, which
+% you can find at https://github.com/hsrmbeamertheme/hsrmbeamertheme.
+%
+
+\ProvidesPackage{beamercolorthemepl}
+
+
+%}}}
+%{{{ --- Options ----------------------
+
+\newif\if@beamer@pl@blockbg
+\@beamer@pl@blockbgfalse
+\DeclareOptionBeamer{blockbg}{\@beamer@pl@blockbgtrue}
+
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamercolorthemepl}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsBeamer
+
+%}}}
+%{{{ --- Colors ---------------------
+
+\definecolor{plBG}{HTML}{FCFDFC}
+\definecolor{plTX}{HTML}{2C2C2E}
+\colorlet{plFG}{plTX!70!plBG}
+
+\definecolor{plHI}{HTML}{3D92AD}
+\definecolor{plLO}{HTML}{CDC099}
+\colorlet{plMD}{plHI!50!plLO}
+
+\setbeamercolor{palette primary}{fg=plFG, bg=plBG}
+\setbeamercolor{palette secondary}{fg=plTX, bg=plBG}
+\setbeamercolor{palette tertiary}{fg=plHI, bg=plBG}
+\setbeamercolor{palette quaternary}{bg=plFG!5!plBG, fg=plFG!15!plBG}
+
+\setbeamercolor{title}{parent=palette tertiary}
+\setbeamercolor{subtitle}{parent=palette primary, fg=plMD}
+\setbeamercolor{author}{parent=palette secondary}
+\setbeamercolor{date}{parent=palette primary}
+\setbeamercolor{institute}{parent=palette primary}
+
+\setbeamercolor{section title}{parent=palette primary}
+\setbeamercolor{frametitle}{parent=palette primary}
+\setbeamercolor{background canvas}{parent=palette primary}
+
+\setbeamertemplate{background canvas}{%
+   \ifnumequal{\c@framenumber}{0}{%
+  	\colorlet{plFG}{plTX!70!plBG}%
+   \color{plBG}\rule{\paperwidth}{\paperheight}%
+   }{%
+      \ifnumequal{\c@framenumber}{\inserttotalframenumber}{
+         % Last frame
+         \color{plBG}\rule{\paperwidth}{\paperheight}
+      }{%
+         % Other frames
+         \color{plBG}\rule{\paperwidth}{\paperheight}
+      }%
+   }%
+}
+
+\setbeamercolor{structure}{fg=plLO}
+
+\setbeamercolor{normal text}{fg=plTX}
+\setbeamercolor{alerted text}{fg=plHI}
+
+\setbeamercolor{footnote}{fg=plMD}
+\setbeamercolor{footnote mark}{fg=.}
+\setbeamercolor{page number in head/foot}{fg=plLO}
+
+\if@beamer@pl@blockbg
+
+\setbeamercolor{block title}{parent=palette primary,bg=palette primary.bg!80!fg}
+\setbeamercolor{block title alerted}{use=alerted text,parent=palette primary,fg=alerted text.fg}
+\setbeamercolor{block title example}{use=example text,parent=palette primary,fg=example text.fg}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg}
+
+\fi
+
+\mode<all>

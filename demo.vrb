@@ -1,0 +1,6 @@
+\frametitle{Example}
+\begin{minted}{python}
+    def double(x):
+      # This is not a useful function
+      return 2 * x
+  \end{minted}

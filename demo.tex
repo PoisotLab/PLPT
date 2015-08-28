@@ -1,0 +1,491 @@
+\documentclass[9pt, compress, aspectratio=169]{beamer}
+
+\usetheme{pl}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{minted}
+
+\usepackage[T1]{fontenc}
+
+\usepgfplotslibrary{dateplot}
+
+\title{Presentation template}
+\subtitle{}
+\date{\today}
+\author{Timothée Poisot}
+\institute{Université de Montréal}
+
+\begin{document}
+
+\maketitle
+
+\section{General informations}
+
+\begin{frame}{Colors}
+  \begin{columns}
+    \begin{column}[T]{.45\textwidth}
+      \textbf{Background colors}
+      \vskip 1em
+      \begin{tikzpicture}\draw[anchor=west, plFG, fill=plBG, inner sep=0pt](0ex, 0ex) rectangle ++ (1.3ex, 1.3ex);\end{tikzpicture} background (\texttt{plBG})
+
+      \vskip 1em
+      \begin{tikzpicture}\draw[anchor=west, plFG, fill=plFG, inner sep=0pt](0ex, 0ex) rectangle ++ (1.3ex, 1.3ex);\end{tikzpicture} foreground (\texttt{plFG})
+
+      \vskip 1em
+      \begin{tikzpicture}\draw[anchor=west, plFG, fill=plTX, inner sep=0pt](0ex, 0ex) rectangle ++ (1.3ex, 1.3ex);\end{tikzpicture} text (\texttt{plTX})
+    \end{column}\hfil
+    \begin{column}[T]{.45\textwidth}
+      \textbf{Highlight colors}
+      \vskip 1em
+      \begin{tikzpicture}\draw[anchor=west, plFG, fill=plLO, inner sep=0pt](0ex, 0ex) rectangle ++ (1.3ex, 1.3ex);\end{tikzpicture} low (\texttt{plLO})
+
+      \vskip 1em
+      \begin{tikzpicture}\draw[anchor=west, plFG, fill=plMD, inner sep=0pt](0ex, 0ex) rectangle ++ (1.3ex, 1.3ex);\end{tikzpicture} medium (\texttt{plMD})
+
+      \vskip 1em
+      \begin{tikzpicture}\draw[anchor=west, plFG, fill=plHI, inner sep=0pt](0ex, 0ex) rectangle ++ (1.3ex, 1.3ex);\end{tikzpicture} high (\texttt{plHI})
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Fonts}
+
+    This documentclass uses the Droid family of fonts. {\sffamily Droid Sans is
+    the default font}, and the monospace font is \texttt{Droid Mono}. Math
+    support is provided.
+
+\end{frame}
+
+\begin{frame}{Maths}
+  $$\int_a^b \alpha \alert{\Alpha} \approx \sum \prod \epsilon \phi$$
+
+    Note that the maths are rendered using \texttt{mathastext}.
+
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[b]{Colors}
+
+  The normal text is set in \texttt{plTX}. The \alert{alerted text} is in
+  \texttt{plHI}. It also works for $\alert{\alpha^2}$ maths. This slide has the
+  \texttt{b} option to be bottom-aligned, to show the white space at the bottom.
+
+  The structure is in \texttt{plLO}.
+
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Options}
+
+  This example presentation was compiled with \texttt{9pt}, \texttt{compress},
+  \texttt{aspectratio=169}, and \texttt{serif}.
+
+  To remove the progress bar below each slide title, use the
+  \texttt{noprogressbar} option.
+
+  By the way, the progressbar colors are derived from \texttt{plHI} and
+  \texttt{plBG}.
+
+\end{frame}
+%--- Next Frame ---%
+
+\section{Plots}
+
+\begin{frame}{PGFplots}
+
+  The theme comes with a few pgfplots options, notably in the form of
+  pre-defined cycles.
+
+  Note that there are also some document-level options, such as (notably)
+  \texttt{scale only axis}.
+
+  \alert{By design}, most cycles are limited to three or four elements. This
+  will force to keep graphs simple.
+
+  The default color of graphics is {\color{plMD}\texttt{plMD}}.
+
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plLineSymbol} cycle}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plLineSymbol cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.9*exp(-(x+0.1)^2/(2*0.9^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plLineType} cycle}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plLineType cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.9*exp(-(x+0.1)^2/(2*0.9^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plLineColor} cycle (only three values!)}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plLineColor cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plSymbol} cycle}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plSymbol cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.9*exp(-(x+0.1)^2/(2*0.9^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plSymbolColor} cycle (only three values!)}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plSymbolColor cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plSymbolFilled} cycle (only three values!)}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plSymbolFilled cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plLineSymbolColor} cycle (only three values!)}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plLineSymbolColor cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plLineSymbolFilled} cycle (only three values!)}
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+    width = 0.8\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    grid=major,
+    cycle list name = plLineSymbolFilled cycle,
+    ]
+      \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{Demonstration with two plots}
+  \begin{center}
+    \begin{tikzpicture}[baseline]
+    \begin{axis}[
+    width = 0.4\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    ymin = 0, ymax = 1,
+    xmin = -1, xmax = 2,
+    grid=major,
+    cycle list name = plLineColor cycle,
+    ]
+      \addplot+[samples=61, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+      \addplot+[samples=61, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+      \addplot+[samples=61, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+    \end{axis}
+    \end{tikzpicture}
+    \hfil
+    \begin{tikzpicture}[baseline]
+    \begin{axis}[
+    width = 0.35\textwidth,
+    height = 0.6\textheight,
+    xlabel={Input},
+    ylabel={Output},
+    yticklabel pos=right,
+    ymin = 0, ymax = 1,
+    xmin = -1, xmax = 0,
+    grid=major,
+    cycle list name = plLineColor cycle,
+    ]
+      \addplot+[samples=61, domain=-1:2,] {0.3*exp(-(x-1.2)^2/(2*0.6^2))};
+      \addplot+[samples=61, domain=-1:2,] {0.7*exp(-(x+0.2)^2/(2*0.8^2))};
+      \addplot+[samples=61, domain=-1:2,] {0.9*exp(-(x+0.1)^2/(2*0.4^2))};
+    \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plLineGraph} style}
+  \begin{columns}
+    \begin{column}[c]{.30\textwidth}
+      Useful if you don't want to have a full frame around the graph.
+    \end{column}\hfil
+    \begin{column}[c]{.60\textwidth}
+      \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[plLineGraph,
+        width = 0.8\textwidth,
+        height = 0.4\textheight,
+        xlabel={Input},
+        ylabel={Output},
+        grid=major,
+        cycle list name = plLineSymbolFilled cycle,
+        ]
+          \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+          \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+          \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+        \end{axis}
+        \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plCenteredAxes} style}
+  \begin{columns}
+    \begin{column}[c]{.30\textwidth}
+      Useful if you don't want to have a full frame around the graph.
+    \end{column}\hfil
+    \begin{column}[c]{.60\textwidth}
+      \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[plCenteredAxes,
+        width = 0.8\textwidth,
+        height = 0.4\textheight,
+        xlabel={Input},
+        ylabel={Output},
+        grid=major,
+        ymin = -1, ymax = 1,
+        xmin = -2, xmax = 2,
+        cycle list name = plSymbolFilled cycle,
+        ]
+          \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))-1};
+          \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+          \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+        \end{axis}
+        \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plNoAxes} style}
+  \begin{columns}
+    \begin{column}[c]{.30\textwidth}
+
+      Used to not draw \alert{any} axes. For whenever you feel like minimalism
+      is the way.
+
+    \end{column}\hfil
+    \begin{column}[c]{.60\textwidth}
+      \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[plNoAxes,
+        width = 0.8\textwidth,
+        height = 0.4\textheight,
+        xlabel={Input},
+        ylabel={Output},
+        grid=major,
+        cycle list name = plLineColor cycle,
+        ]
+          \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))};
+          \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+          \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+        \end{axis}
+        \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{The \texttt{plVerticalBarPlot} style}
+  \begin{columns}
+    \begin{column}[c]{.30\textwidth}
+
+      Sometimes barplots are a necessary evil. We've got you covered. There is a
+      \texttt{plBarColors} cycle to go with it. Only three colors.
+
+      Note that the y axis will \alert{always} start at 0 when this style is
+      used.
+
+    \end{column}\hfil
+    \begin{column}[c]{.60\textwidth}
+      \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[plVerticalBarPlot,
+        width = 0.8\textwidth,
+        height = 0.4\textheight,
+        xlabel={Input},
+        ylabel={Output},
+        grid=major,
+        cycle list name = plBarColors cycle,
+        ]
+          \addplot coordinates {(1930,50) (1940,33) (1950,40) (1960,50) (1970,70)};
+          \addplot coordinates {(1930,27) (1940,13) (1950,86) (1960,30) (1970,72)};
+          \addplot coordinates {(1930,9) (1940,11) (1950,21) (1960,42) (1970,40)};
+        \end{axis}
+        \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}{3D with \texttt{plSurfacePlot}}
+  \begin{tikzpicture}
+\begin{axis}[plSurfacePlot,
+width = 0.5\textwidth,
+height = 0.6\textheight,
+xlabel={Input},
+ylabel={Output},
+grid=major,
+]
+\addplot3[
+surf,
+domain=-2:2,
+domain y=-1.3:1.3,
+]
+{exp(-x^2-y^2)*x};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+%--- Next Frame ---%
+
+\section{Code}
+
+\begin{frame}[fragile]{General remarks on code}
+
+  The highlighting of code is handled by \texttt{minted}, which uses
+  \texttt{pygments} as the syntax engine.
+
+  Slides with code \alert{must} be marked as \texttt{fragile}. For example, the
+  beginning of the present slide is:
+
+  \begin{minted}{latex}
+    \begin{frame}[fragile]{General remarks on code}
+  \end{minted}
+
+  Refer to the \texttt{minted} documentation.
+
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t,fragile]{Example}
+  \begin{minted}{python}
+    def double(x):
+      # This is not a useful function
+      return 2 * x
+  \end{minted}
+\end{frame}
+%--- Next Frame ---%
+
+\section{Final matters}
+
+\begin{frame}{Résumé}
+  Get the source of this theme and the demo presentation from
+  \begin{center}\url{github.com/matze/mtheme}\end{center}
+  This presentation
+  \begin{center}\ccbysa\end{center}
+\end{frame}
+
+
+\end{document}
