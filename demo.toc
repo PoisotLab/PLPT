@@ -1,5 +1,0 @@
-\beamer@endinputifotherversion {3.33pt}
-\beamer@sectionintoc {1}{General informations}{2}{0}{1}
-\beamer@sectionintoc {2}{Plots}{8}{0}{2}
-\beamer@sectionintoc {3}{Code}{24}{0}{3}
-\beamer@sectionintoc {4}{Final matters}{27}{0}{4}

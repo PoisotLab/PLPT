@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{def} \PYG{n+nf}{double}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+      \PYG{c}{\PYGZsh{} This is not a useful function}
+      \PYG{k}{return} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{x}
+\end{Verbatim}
