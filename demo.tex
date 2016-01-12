@@ -51,16 +51,15 @@
 
 \begin{frame}{Fonts}
 
-    This documentclass uses the Droid family of fonts. {\sffamily Droid Sans is
-    the default font}, and the monospace font is \texttt{Droid Mono}. Math
+    This documentclass uses the Fira family of fonts. {\sffamily Fira Sans
+    is the default font}, and the monospace font is \texttt{Fira Mono}. Math
     support is provided.
 
 \end{frame}
 
 \begin{frame}{Maths}
-  $$\int_a^b \alpha \alert{\eta} \approx \sum \prod \epsilon \phi$$
 
-    Note that the maths are rendered using \texttt{mathastext}.
+  $$\int_a^b \alpha \alert{\eta} \approx \sum \prod \epsilon \phi$$
 
 \end{frame}
 %--- Next Frame ---%
@@ -79,7 +78,7 @@
 \begin{frame}[t]{Options}
 
   This example presentation was compiled with \texttt{9pt}, \texttt{compress},
-  \texttt{aspectratio=169}, and \texttt{serif}.
+  and \texttt{aspectratio=169}.
 
   To remove the progress bar below each slide title, use the
   \texttt{noprogressbar} option.
@@ -277,7 +276,7 @@
     \begin{axis}[
     width = 0.4\textwidth,
     height = 0.6\textheight,
-    xlabel={Input},
+    xlabel={Input 1},
     ylabel={Output},
     ymin = 0, ymax = 1,
     xmin = -1, xmax = 2,
@@ -294,8 +293,8 @@
     \begin{axis}[
     width = 0.35\textwidth,
     height = 0.6\textheight,
-    xlabel={Input},
-    ylabel={Output},
+    xlabel={Input 2},
+    ylabel={},
     yticklabel pos=right,
     ymin = 0, ymax = 1,
     xmin = -1, xmax = 0,
@@ -354,11 +353,11 @@
         grid=major,
         ymin = -1, ymax = 1,
         xmin = -2, xmax = 2,
-        cycle list name = plSymbolFilled cycle,
+        cycle list name = plLineColor cycle,
         ]
-          \addplot+[samples=21, domain=-1:2,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))-1};
-          \addplot+[samples=21, domain=-1:2,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
-          \addplot+[samples=21, domain=-1:2,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
+          \addplot+[samples=21, domain=-1:1,] {0.8*exp(-(x-1.0)^2/(2*0.7^2))-1};
+          \addplot+[samples=21, domain=-1:1,] {0.6*exp(-(x-0.8)^2/(2*0.6^2))};
+          \addplot+[samples=21, domain=-1:1,] {0.5*exp(-(x+0.2)^2/(2*0.5^2))};
         \end{axis}
         \end{tikzpicture}
       \end{center}
