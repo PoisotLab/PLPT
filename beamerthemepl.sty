@@ -337,8 +337,16 @@
   tick align=outside,
   every axis/.append style={
     line width=0.2pt,
-    font=\small,
+    font=\small\bfseries,
     plTX,
+  },
+  xlabel style={
+     at={(ticklabel cs:0)},
+     anchor=north west,
+  },
+  ylabel style={
+     at={(ticklabel cs:0)},
+     anchor=south west,
   },
   tick label style={
     font=\tiny,
