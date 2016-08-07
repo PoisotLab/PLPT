@@ -5,7 +5,7 @@ AUX = $(FILE).aux
 TEXC := pdflatex
 TEXC_OPTS += -shell-escape
 TEXMFHOME = $(shell kpsewhich -var-value=TEXMFHOME)
-INSTALL_DIR = $(TEXMFHOME)/tex/latex/mtheme
+INSTALL_DIR = $(TEXMFHOME)/tex/latex/pltheme
 
 .PHONY: clean install
 
