@@ -1,1 +1,8 @@
 _minted-demo
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
