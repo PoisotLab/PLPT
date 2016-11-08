@@ -332,12 +332,12 @@
 %{{{ Styles
 
 \pgfplotsset{
-  compat=1.9,
+  compat=1.12,
   scale only axis,
   tick align=outside,
   every axis/.append style={
     line width=0.2pt,
-    font=\small\bfseries,
+    font=\normalsize\bfseries\rmfamily,
     plTX,
   },
   xlabel style={
@@ -349,7 +349,7 @@
      anchor=south west,
   },
   tick label style={
-    font=\tiny,
+    font=\small\bfseries,
     plFG,
   },
   major grid style={
@@ -399,7 +399,7 @@
   },
   plSurfacePlot/.style = {
     colorbar,
-    colormap={plcm}{color=(plLO!20) color=(plHI)},
+    colormap={plcm}{color=(plBG) color=(plHI)},
     tick align=inside,
     shader=faceted,
     faceted color=mapped color!70!plFG,
