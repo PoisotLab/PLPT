@@ -147,6 +147,12 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/translator/translator.sty
@@ -205,6 +211,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss9.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
@@ -432,7 +439,8 @@ INPUT _minted-demo/default.pygstyle
 INPUT demo.nav
 INPUT demo.nav
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
@@ -450,7 +458,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
