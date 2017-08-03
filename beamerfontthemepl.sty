@@ -9,11 +9,14 @@
 
 \ProvidesPackage{beamerfontthemepl}
 
-\RequirePackage[T1]{fontenc}
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage[utf8]{inputenc}
+%\RequirePackage[default]{tgpagella}
 
-\RequirePackage[urw-garamond]{mathdesign}
-\RequirePackage{garamondx}
-\RequirePackage{inconsolata}
+\RequirePackage{mathspec}
+\setmathfont(Digits,Latin,Greek){DejaVu Sans}
+\setmainfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
 
 \let\varepsilon\epsilon
 \let\varphi\phi
@@ -37,4 +40,4 @@
 
 \setbeamerfont{page number in head/foot}{size=\scriptsize}
 
-\linespread{1.15}
+\linespread{1.3}
