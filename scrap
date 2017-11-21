@@ -1,0 +1,44 @@
+\vspace*{\@mtheme@voffset}
+{\hfill\color{plFG}\tiny\ccby}
+    \vfill \vfil \vfill
+    \vfill \vfil \vfill
+    \vfil
+    \vfil
+    \vfil
+    \ifx\inserttitle\@empty%
+    \else%
+    {\raggedright\linespread{1.0}\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+    \vspace*{0.5em}
+    \fi%
+    \ifx\insertsubtitle\@empty%
+    \else%
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    \vspace*{0.5em}
+    \fi%
+    \vspace*{1em}
+    \ifx\insertauthor\@empty%
+    \else%
+    {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+    \vspace*{0.25em}
+    \fi%
+    \ifx\insertdate\@empty%
+    \else%
+    {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+    \fi%
+    \ifx\insertinstitut\@empty%
+    \else%
+    \vspace*{3mm}
+    {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+    \fi%
+    \vspace*{\@mtheme@voffset}
+
+
+    {
+      \begingroup
+      \setbeamercolor{background canvas}{parent=palette primary}
+      \begin{frame}[plain]
+        \vspace{2em}\usebeamerfont{section title}
+        \progressbar@sectionprogressbar%
+      \end{frame}
+      \endgroup
+    }

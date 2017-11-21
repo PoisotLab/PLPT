@@ -9,29 +9,26 @@
 
 \ProvidesPackage{beamerfontthemepl}
 
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage[utf8]{inputenc}
-%\RequirePackage[default]{tgpagella}
-
 \RequirePackage{mathspec}
 \defaultfontfeatures{Mapping=tex-text,Ligatures={TeX,Common},Scale=MatchLowercase}
-\setmathfont(Digits,Latin,Greek){DejaVu Sans}
-\setmainfont{DejaVu Sans}
-\setmonofont{DejaVu Sans Mono}
+\setmathfont(Digits,Latin,Greek){Fira Sans}
+\setmainfont{Fira Sans}
+\setmonofont{Fira Mono}
 
 \let\varepsilon\epsilon
 \let\varphi\phi
 
-\setbeamerfont{title}{size=\Large}
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{subtitle}{size=\large, series=\mdseries}
 \setbeamerfont{author}{size=\small}
+\setbeamerfont{institute}{size=\small}
 \setbeamerfont{date}{size=\small}
 
-\setbeamerfont{section title}{size=\normalsize}
+\setbeamerfont{section title}{size=\normalsize, series=\mdseries}
 
 \setbeamerfont{block title}{size=\normalsize}
 \setbeamerfont{block title alerted}{size=\normalsize}
 
-\setbeamerfont{subtitle}{size=\small}
 \setbeamerfont{frametitle}{size=\small, series=\mdseries}
 
 \setbeamerfont{caption}{size=\small}
