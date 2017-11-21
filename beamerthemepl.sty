@@ -63,7 +63,7 @@
 
 %{{{ --- Titlepage --------------------
 
-\pgfdeclareimage[height=1.5\paperheight]{titlebackground}{background.png}
+\pgfdeclareimage[height=1.2\paperheight]{titlebackground}{background.png}
 
 \def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
 
@@ -119,7 +119,7 @@
     \makebox[\textwidth][c]{
       \begin{tikzpicture}[tight background]
 
-        \node[anchor=south west, fg, inner sep=0pt, text width=\progressbar@pbwd] at (0pt, 0pt) {\color{plMD!20!plFG}\large\bfseries\insertsectionHEAD\par};
+        \node[anchor=south west, fg, inner sep=0pt, text width=\progressbar@pbwd] at (0pt, 0pt) {\color{plAC!15!plFG}\large\bfseries\insertsectionHEAD\par};
 
         \vspace{\@mtheme@voffset}%
 
@@ -157,16 +157,6 @@
 \newcommand{\insertsectionHEAD}{%
   \expandafter\insertsectionHEADaux\insertsectionhead}
   \newcommand{\insertsectionHEADaux}[3]{#3}
-
-\newcommand{\plain}[2][]{%
-  \begingroup
-  \setbeamercolor{background canvas}{fg=plLO,bg=plTX}
-  \begin{frame}{#1}
-    \centering
-    \vfill\vspace{1em}\usebeamerfont{section title}\textcolor{plHI}{\MakeUppercase{#2}}\vfill
-  \end{frame}
-  \endgroup
-}
 
 %}}}
 %{{{ --- Itemize ----------------------
@@ -227,10 +217,6 @@
 \setbeamertemplate{footline}
 {%
 \vspace{\@mtheme@voffset}
-%\begin{beamercolorbox}[wd=\textwidth,ht=3ex,dp=3ex,leftskip=0.3cm,rightskip=0.3cm]{structure}%
-%  \hfill\usebeamerfont{page number in head/foot}%
-%  \insertframenumber%
-%\end{beamercolorbox}%
 }
 
 \setbeamertemplate{footnote}
@@ -261,69 +247,6 @@
 }
 
 %}}}
-%{{{ --- pgfplots ---------------------
-
-%{{{ Color cycles
-
-\pgfplotscreateplotcyclelist{plLineSymbol cycle}{%
-  {draw=plMD, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, very thick, mark = square*, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, very thick, mark = triangle*, mark size=2.9pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, very thick, mark = diamond*, mark size=2.9pt, every mark/.append style={fill=plBG}},
-}
-
-\pgfplotscreateplotcyclelist{plLineType cycle}{%
-  {draw=plMD, very thick, solid},
-  {draw=plMD, very thick, dashed},
-  {draw=plMD, very thick, dotted},
-  {draw=plMD, very thick, dashdotted},
-}
-
-\pgfplotscreateplotcyclelist{plLineColor cycle}{%
-  {draw=plLO, very thick, solid},
-  {draw=plMD, very thick, solid},
-  {draw=plHI, very thick, solid},
-}
-
-\pgfplotscreateplotcyclelist{plSymbol cycle}{%
-  {draw=plMD, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, only marks, very thick, mark = square*, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, only marks, very thick, mark = triangle*, mark size=2.9pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, only marks, very thick, mark = diamond*, mark size=2.9pt, every mark/.append style={fill=plBG}},
-}
-
-\pgfplotscreateplotcyclelist{plSymbolColor cycle}{%
-  {draw=plLO, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plHI, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-}
-
-\pgfplotscreateplotcyclelist{plSymbolFilled cycle}{%
-  {draw=plLO, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plLO!50!plBG}},
-  {draw=plMD, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plMD!50!plBG}},
-  {draw=plHI, only marks, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plHI!50!plBG}},
-}
-
-\pgfplotscreateplotcyclelist{plLineSymbolColor cycle}{%
-  {draw=plLO, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plMD, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-  {draw=plHI, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plBG}},
-}
-
-\pgfplotscreateplotcyclelist{plLineSymbolFilled cycle}{%
-  {draw=plLO, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plLO!50!plBG}},
-  {draw=plMD, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plMD!50!plBG}},
-  {draw=plHI, very thick, mark = *, mark size=2.1pt, every mark/.append style={fill=plHI!50!plBG}},
-}
-
-\pgfplotscreateplotcyclelist{plBarColors cycle}{%
-  {draw=plLO, very thin, fill=plLO},
-  {draw=plMD, very thin, fill=plMD},
-  {draw=plHI, very thin, fill=plHI},
-}
-
-
-%}}}
 %{{{ Styles
 
 \pgfplotsset{
@@ -333,7 +256,7 @@
   every axis/.append style={
     line width=0.2pt,
     font=\normalsize\bfseries\rmfamily,
-    plTX,
+    plFG,
   },
   xlabel style={
      at={(ticklabel cs:0)},
