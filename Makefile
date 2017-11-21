@@ -3,7 +3,8 @@ INSTALL_DIR = $(TEXMFHOME)/tex/latex/pltheme
 FILE=slides
 OUTPUT=$(FILE)_final.pdf
 
-.DEFAULT: $(OUTPUT)
+all: $(OUTPUT)
+
 .PHONY: clean install
 
 $(FILE).md: $(FILE).Jmd
