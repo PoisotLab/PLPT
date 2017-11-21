@@ -1,98 +1,72 @@
 ---
-title: Jmd conversion
-subtitle: It just works
+title: EcologicalNetwork.jl
+subtitle: Analysis of ecological interactions
 author: Timothée Poisot
-institute: LOLOLOL
+institute: Université de Montréal
 date: \today
 ---
 
-## How to compile
-
-This is the code we need
-
-~~~
-julia -e 'using Weave; weave("slides.Jmd", doctype="pandoc")'
-pandoc slides.md -t beamer
-  --slide-level 2
-  -o slides.tex
-  --template ./template/pl.tex
-  --highlight-style pygments
-latexmk
-~~~
-
-## Using packages
+## The `EcologicalNetwork` package
 
 ~~~~{.julia}
-using StatsBase
-~~~~~~~~~~~~~
+using EcologicalNetwork
+data = ollerton();
 
-
-
-
-
-## Columns
-
-\begincols
-\column{0.3\textwidth}
-
-You can have columns: 4
-
-\column{0.7\textwidth}
-
-~~~~{.julia}
-n = 3
-A = zeros(Int64, (n, n))
-for i in 1:n
-  A[i,i] = i
-end
-A
+η(data)
 ~~~~~~~~~~~~~
 
 
 ~~~~
-3×3 Array{Int64,2}:
- 1  0  0
- 0  2  0
- 0  0  3
+3-element Array{Float64,1}:
+ 0.640955
+ 0.646288
+ 0.635621
 ~~~~
 
 
 
 
 
-\stopcols
+# Visualising networks
 
-# Some figures
-
-## Figures
-
-\begincols
-\column{0.35\textwidth}
+## Setting up the environment
 
 ~~~~{.julia}
 using Plots
 pgfplots()
-p1 = plot(rand(10),
-  size=(250,200),
-  lab="")
-plot!(p1, rand(10), c=:red);
-xaxis!(p1, "Position");
-yaxis!(p1, "Random value");
-savefig(p1, "figures/test1.tex");
+~~~~~~~~~~~~~
+
+
+~~~~
+Plots.PGFPlotsBackend()
+~~~~
+
+
+
+
+
+## Default plotting
+
+\begincols
+\column{0.48\textwidth}
+
+~~~~{.julia}
+p1 = plot(data, size=(250, 100));
+savefig(p1, "figures/ollerton.tex");
 ~~~~~~~~~~~~~
 
 
 
 
 
-\hfill\column{0.55\textwidth}
+\hfill\column{0.48\textwidth}
 
-\input{figures/test1.tex}
+\input{figures/ollerton.tex}
 
 \stopcols
 
 ## Output
 
-
-
 # Some code
+
+## Default plotting
