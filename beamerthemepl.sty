@@ -344,7 +344,7 @@
      anchor=south west,
   },
   tick label style={
-    font=\small\bfseries,
+    font=\small\mdseries,
     plFG,
   },
   major grid style={
@@ -354,54 +354,6 @@
   disable thousands separator/.style={
     /pgf/number format/.cd,
       1000 sep={}
-  },
-  plLineGraph/.style = {
-    scaled ticks = false,
-    axis lines = left,
-  },
-  plCenteredAxes/.style = {
-    scaled ticks = false,
-    axis lines = middle,
-    axis equal,
-  },
-  plNoAxes/.style = {
-    axis x line*=bottom,
-    axis y line*=left,
-    x axis line style={plBG, line width=2pt},
-    y axis line style={plBG, line width=2pt},
-    trim axis left, trim axis right,
-  },
-  plBarPlot/.style = {
-    bar width = 5pt,
-  },
-  plVerticalBarPlot/.style = {
-    plBarPlot,
-    ybar = 1pt,
-    ymin = 0,
-    axis x line*=bottom,
-    axis y line*=left,
-    y axis line style={plBG, line width=1pt},
-    trim axis left, trim axis right,
-  },
-  plHorizontalBarPlot/.style = {
-    plBarPlot,
-    xbar = 1pt,
-    xmin = 0,
-    axis x line*=bottom,
-    axis y line*=left,
-    x axis line style={plBG, line width=1pt},
-    trim axis left, trim axis right,
-  },
-  plSurfacePlot/.style = {
-    colorbar,
-    colormap={plcm}{color=(plBG) color=(plHI)},
-    tick align=inside,
-    shader=faceted,
-    faceted color=mapped color!70!plFG,
-    major grid style={
-      solid,
-      plFG!50!plBG
-    }
   }
 }
 

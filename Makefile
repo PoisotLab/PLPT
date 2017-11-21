@@ -1,26 +1,26 @@
-FILE = demo
-SRC = $(FILE).tex
-PDF = $(FILE).pdf
-AUX = $(FILE).aux
-TEXC := pdflatex
-TEXC_OPTS += -shell-escape
 TEXMFHOME = $(shell kpsewhich -var-value=TEXMFHOME)
 INSTALL_DIR = $(TEXMFHOME)/tex/latex/pltheme
+FILE=slides
+OUTPUT=$(FILE)_final.pdf
 
+.DEFAULT: $(OUTPUT)
 .PHONY: clean install
 
-all: $(PDF)
+$(FILE).md: $(FILE).Jmd
+	julia -e 'using Weave; weave("$<", doctype="pandoc")'
 
-$(AUX):
-	$(TEXC) $(TEXC_OPTS) $(SRC)
+$(FILE).tex: $(FILE).md
+	pandoc $< -t beamer --slide-level 2 -o $@ --template ./template/pl.tex --highlight-style pygments
 
-$(PDF): beamerthemepl.sty $(AUX) $(SRC)
-	$(TEXC) $(TEXC_OPTS) $(SRC)
+$(FILE).pdf: $(FILE).tex
+	latexmk
+
+$(OUTPUT): $(FILE).pdf
+	cp $< $@
 
 clean:
-	@rm $(FILE).{aux,log,nav,pyg,snm,toc,vrb,out}
-	# @rm -f $(PDF)
-	@git clean -xf
+	latexmk	-c
+	rm *.{vrb,nav,snm}
 
 install:
 	mkdir -p $(INSTALL_DIR)
