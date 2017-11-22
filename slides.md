@@ -6,12 +6,24 @@ institute: Université de Montréal
 date: \today
 ---
 
-## A slide
+## Let's make a plot
+
+~~~~{.julia}
+using Distributions
+using Plots
+pyplot()
+a = sort(rand(100).-0.5)
+pl = plot(a, size=(400, 200), leg=false, frame=:origin, c=:orange, background_color_outside=RGBA(colorant"white", 0.0))
+savefig(pl, "figures/density.pdf")
+~~~~~~~~~~~~~
 
 
 
 
-\includegraphics[width=\textwidth]{figures/density.png}
+
+## This is the output
+
+\includegraphics[width=\textwidth]{figures/density.pdf}
 
 ## A frame with maths
 
@@ -53,7 +65,8 @@ p1 = plot(
   # We don't want borders
   frame = :grid,
   # We don't want a legend
-  leg   = false
+  leg   = false,
+  background_color_outside=RGBA(colorant"white", 0.0)
   );
 savefig(p1, "figures/scatter.pdf");
 ~~~~~~~~~~~~~

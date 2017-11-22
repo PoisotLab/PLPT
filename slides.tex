@@ -63,9 +63,24 @@
 
 \maketitle
 
-\begin{frame}{A slide}
+\begin{frame}[fragile]{Let's make a plot}
 
-\includegraphics[width=\textwidth]{figures/density.png}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{using Distributions}
+\NormalTok{using Plots}
+\NormalTok{pyplot()}
+\NormalTok{a = sort(rand(}\FloatTok{100}\NormalTok{).-}\FloatTok{0.5}\NormalTok{)}
+\NormalTok{pl = plot(a, size=(}\FloatTok{400}\NormalTok{, }\FloatTok{200}\NormalTok{), leg=false, frame=:origin, c=:orange, background_color_outside=RGBA(colorant}\StringTok{"white"}\NormalTok{, }\FloatTok{0.0}\NormalTok{))}
+\NormalTok{savefig(pl, }\StringTok{"figures/density.pdf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{This is the output}
+
+\includegraphics[width=\textwidth]{figures/density.pdf}
 
 \end{frame}
 
@@ -112,7 +127,8 @@ Plots.PyPlotBackend()
   \CommentTok{# We don't want borders}
   \NormalTok{frame = :grid,}
   \CommentTok{# We don't want a legend}
-  \NormalTok{leg   = false}
+  \NormalTok{leg   = false,}
+  \NormalTok{background_color_outside=RGBA(colorant}\StringTok{"white"}\NormalTok{, }\FloatTok{0.0}\NormalTok{)}
   \NormalTok{);}
 \NormalTok{savefig(p1, }\StringTok{"figures/scatter.pdf"}\NormalTok{);}
 \end{Highlighting}

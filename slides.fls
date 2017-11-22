@@ -448,7 +448,10 @@ INPUT slides.nav
 INPUT slides.nav
 INPUT background.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
-INPUT figures/density.png
+OUTPUT slides.vrb
+INPUT slides.vrb
+INPUT slides.vrb
+INPUT figures/density.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
