@@ -1,85 +1,94 @@
 ---
-title: Title
-subtitle: Subtitle
+title: Beamer template
+subtitle: Using pandoc, knitr, Weave, etc...
 author: Timothée Poisot
 institute: Université de Montréal
 date: \today
 ---
 
-## Let's make a plot
+## Main goals
 
-~~~~{.julia}
-using Distributions
-using Plots
-pyplot()
-a = sort(rand(100).-0.5)
-pl = plot(a, size=(400, 200), leg=false, frame=:origin, c=:orange, background_color_outside=RGBA(colorant"white", 0.0))
-savefig(pl, "figures/density.pdf")
-~~~~~~~~~~~~~
+1. Easy generation of slides
+2. Integration with `R` and `Julia`
+3. Looks nice
 
+## Fonts and spacing
 
+The document uses the \alert{Input} family:
 
+Main body
+: Input Sans Condensed
 
+Maths
+: $\text{Input Sans Narrow}$
 
-## This is the output
+Code
+: `Input Mono Compressed`
+
+The linespread value has been increased to about $1.3$
+
+## Colors
+
+The structure elements are in teal, inline code is in `blue`, and alerted text
+in \alert{orange}.
+
+The background is off-white: it will *look* like it's white, but with less
+eyestrain.
+
+The foreground is not-quite-black either.
+
+## Using images
 
 \includegraphics[width=\textwidth]{figures/density.pdf}
 
-## A frame with maths
+## Maths
+
+The Input family of fonts has some support for Greek and mathematical symbols:
 
 $$
-\frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alpha N\right)
+\frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alert{\alpha N}\right)
 $$
 
-What about symbols, $B_x \forall x \in \sum_i k_i \leq 2$, and integration $x = \int_i^\infty y_i$?
+You can use `\alert` within math blocks.
 
-# Plots
+# Using sections
 
-## Setting things up
+## Section titles
 
-~~~~{.julia}
-using Plots
-pyplot()
-~~~~~~~~~~~~~
+Every section will have a small band with the background image.
 
+They are first-level headers in markdown:
 
-~~~~
-Plots.PyPlotBackend()
-~~~~
+~~~ md
+# Section
 
+## Slide-title
 
+Slide content
+~~~
 
+## Other things
 
+We can use \alert{unicode characters} in code:
 
-## Columns
+~~~ julia
+α = 2.0
+b, c = "abc", 'c'
+# This code does nothing (useful)
+for i in 1:10
+  @elapsed println("i:\t$i")
+end
+~~~
 
-\begincols
-\column{0.48\textwidth}
+This is useful as `Julia` supports it. There is also a customized color scheme
+for code highlighting.
 
-~~~~{.julia}
-p1 = plot(
-  # These are the data
-  sort(rand(40)),
-  # This is the plot size
-  size  = (250, 200),
-  # We don't want borders
-  frame = :grid,
-  # We don't want a legend
-  leg   = false,
-  background_color_outside=RGBA(colorant"white", 0.0)
-  );
-savefig(p1, "figures/scatter.pdf");
-~~~~~~~~~~~~~
+## Visual counter
 
+The circle next to the title of each slide moves forward at every slide
+(including the section changes).
 
-
-
-
-\hfill\column{0.48\textwidth}
-
-\includegraphics[width=\columnwidth]{figures/scatter.pdf}
-
-\stopcols
+It is a useful visual key for how much slides are left.
 
 ## Output
 
@@ -92,8 +101,25 @@ faucibus neque sit amet est elementum, suscipit placerat est interdum. Phasellus
 sed convallis est. Nunc fermentum convallis odio eget gravida. Duis venenatis
 dictum tempor.
 
-# Some code
+## Background image
 
-## Default plotting
+The background image is generated from the `makebackground.jl` file.
 
-Some text maybe?
+The file is `background.png` -- it can be replaced by any file \alert{as long
+as} the replacement file is in the 16:10 format (for example, a 1600 $\times$
+1000 image).
+
+## Final slide
+
+The final slide is blank.
+
+This is to avoid the awkward "Switching to black" thing that happens when there
+are no slides left.
+
+# Reproducible documents
+
+## It's in the Makefile
+
+Documents `slides.Jmd` and `slides.Rmd` will be detected.
+
+They will be converted to `slides.md` using either `R`/`knitr` or `Julia`/`Weave.jl`.

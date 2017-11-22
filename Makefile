@@ -6,7 +6,7 @@ OUTPUT=$(FILE)_final.pdf
 all: $(OUTPUT)
 
 background.png: makebackground.jl
-	julie $<
+	julia $<
 
 .PHONY: clean install
 
@@ -19,7 +19,7 @@ jmd2md: $(wildcard $(FILE).Jmd)
 $(FILE).md: jmd2md rmd2md
 
 $(FILE).tex: $(FILE).md
-	pandoc $< -t beamer --slide-level 2 -o $@ --template ./template/pl.tex --highlight-style pygments
+	pandoc $< -t beamer --slide-level 2 -o $@ --template ./template/pl.tex
 
 $(FILE).pdf: $(FILE).tex
 	latexmk

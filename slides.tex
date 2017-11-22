@@ -9,40 +9,57 @@
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}
 % Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
-\newcommand{\ImportTok}[1]{{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
-\newcommand{\BuiltInTok}[1]{{#1}}
-\newcommand{\ExtensionTok}[1]{{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
+\usepackage[framemethod=tikz]{mdframed}
+\definecolor{shadecolor}{HTML}{EEEEEE}
+\mdfsetup{
+  backgroundcolor=shadecolor,
+  linecolor=shadecolor,
+  innerleftmargin=5pt,
+  innerrightmargin=5pt,
+  leftmargin=-5pt,
+  rightmargin=-5pt,
+  roundcorner=3pt
+}
+\newenvironment{Shaded}{\begin{mdframed}}{\end{mdframed}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.26,0.66,0.93}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{\underline{{#1}}}}
+\newcommand{\DecValTok}[1]{\textcolor[HTML]{558B2F}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[HTML]{558B2F}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[HTML]{558B2F}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[HTML]{7E57C2}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[HTML]{7E57C2}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[HTML]{7E57C2}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[HTML]{7E57C2}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[HTML]{7E57C2}{{#1}}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[HTML]{8D6E63}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[HTML]{BCAAA4}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[HTML]{BCAAA4}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[HTML]{26A69A}{\textbf{{#1}}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.26,0.66,0.93}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{\textbf{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.74,0.68,0.62}{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.40,1.00}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[HTML]{FF6E40}{\textbf{{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[HTML]{FF3D00}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[HTML]{DD2C00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{\textcolor[HTML]{212121}{{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\color{plTT}#1}}
 
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -53,8 +70,8 @@
 \newcommand{\begincols}{\begin{columns}}
 \newcommand{\stopcols}{\end{columns}}
 
-\title{Title}
-\subtitle{Subtitle}
+\title{Beamer template}
+\subtitle{Using pandoc, knitr, Weave, etc\ldots{}}
 \date{\today}
 \author{Timothée Poisot}
 \institute{Université de Montréal}
@@ -63,82 +80,116 @@
 
 \maketitle
 
-\begin{frame}[fragile]{Let's make a plot}
+\begin{frame}[fragile]{Main goals}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{using Distributions}
-\NormalTok{using Plots}
-\NormalTok{pyplot()}
-\NormalTok{a = sort(rand(}\FloatTok{100}\NormalTok{).-}\FloatTok{0.5}\NormalTok{)}
-\NormalTok{pl = plot(a, size=(}\FloatTok{400}\NormalTok{, }\FloatTok{200}\NormalTok{), leg=false, frame=:origin, c=:orange, background_color_outside=RGBA(colorant}\StringTok{"white"}\NormalTok{, }\FloatTok{0.0}\NormalTok{))}
-\NormalTok{savefig(pl, }\StringTok{"figures/density.pdf"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Easy generation of slides
+\item
+  Integration with \texttt{R} and \texttt{Julia}
+\item
+  Looks nice
+\end{enumerate}
 
 \end{frame}
 
-\begin{frame}{This is the output}
+\begin{frame}[fragile]{Fonts and spacing}
+
+The document uses the \alert{Input} family:
+
+\begin{description}
+\tightlist
+\item[Main body]
+Input Sans Condensed
+\item[Maths]
+\(\text{Input Sans Narrow}\)
+\item[Code]
+\texttt{Input\ Mono\ Compressed}
+\end{description}
+
+The linespread value has been increased to about \(1.3\)
+
+\end{frame}
+
+\begin{frame}[fragile]{Colors}
+
+The structure elements are in teal, inline code is in \texttt{blue}, and
+alerted text in \alert{orange}.
+
+The background is off-white: it will \emph{look} like it's white, but
+with less eyestrain.
+
+The foreground is not-quite-black either.
+
+\end{frame}
+
+\begin{frame}{Using images}
 
 \includegraphics[width=\textwidth]{figures/density.pdf}
 
 \end{frame}
 
-\begin{frame}{A frame with maths}
+\begin{frame}[fragile]{Maths}
+
+The Input family of fonts has some support for Greek and mathematical
+symbols:
 
 \[
-\frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alpha N\right)
+\frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alert{\alpha N}\right)
 \]
 
-What about symbols, \(B_x \forall x \in \sum_i k_i \leq 2\), and
-integration \(x = \int_i^\infty y_i\)?
+You can use \texttt{\textbackslash{}alert} within math blocks.
 
 \end{frame}
 
-\section{Plots}\label{plots}
+\section{Using sections}\label{using-sections}
 
-\begin{frame}[fragile]{Setting things up}
+\begin{frame}[fragile]{Section titles}
+
+Every section will have a small band with the background image.
+
+They are first-level headers in markdown:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{using Plots}
-\NormalTok{pyplot()}
+\FunctionTok{# Section}
+
+\FunctionTok{## Slide-title}
+
+\NormalTok{Slide content}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-Plots.PyPlotBackend()
-\end{verbatim}
 
 \end{frame}
 
-\begin{frame}[fragile]{Columns}
+\begin{frame}[fragile]{Other things}
 
-\begincols
-\column{0.48\textwidth}
+We can use \alert{unicode characters} in code:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p1 = plot(}
-  \CommentTok{# These are the data}
-  \NormalTok{sort(rand(}\FloatTok{40}\NormalTok{)),}
-  \CommentTok{# This is the plot size}
-  \NormalTok{size  = (}\FloatTok{250}\NormalTok{, }\FloatTok{200}\NormalTok{),}
-  \CommentTok{# We don't want borders}
-  \NormalTok{frame = :grid,}
-  \CommentTok{# We don't want a legend}
-  \NormalTok{leg   = false,}
-  \NormalTok{background_color_outside=RGBA(colorant}\StringTok{"white"}\NormalTok{, }\FloatTok{0.0}\NormalTok{)}
-  \NormalTok{);}
-\NormalTok{savefig(p1, }\StringTok{"figures/scatter.pdf"}\NormalTok{);}
+\NormalTok{α = }\FloatTok{2.0}
+\NormalTok{b, c = }\StringTok{"abc"}\NormalTok{, }\CharTok{'c'}
+\CommentTok{# This code does nothing (useful)}
+\KeywordTok{for} \NormalTok{i }\KeywordTok{in} \FloatTok{1}\NormalTok{:}\FloatTok{10}
+  \NormalTok{@elapsed println(}\StringTok{"i:}\NormalTok{\textbackslash{}t}\StringTok{$i"}\NormalTok{)}
+\KeywordTok{end}
 \end{Highlighting}
 \end{Shaded}
 
-\hfill\column{0.48\textwidth}
+This is useful as \texttt{Julia} supports it. There is also a customized
+color scheme for code highlighting.
 
-\includegraphics[width=\columnwidth]{figures/scatter.pdf}
+\end{frame}
 
-\stopcols
+\begin{frame}{Visual counter}
+
+The circle next to the title of each slide moves forward at every slide
+(including the section changes).
+
+It is a useful visual key for how much slides are left.
 
 \end{frame}
 
@@ -156,14 +207,38 @@ tempor.
 
 \end{frame}
 
-\section{Some code}\label{some-code}
+\begin{frame}[fragile]{Background image}
 
-\begin{frame}{Default plotting}
+The background image is generated from the \texttt{makebackground.jl}
+file.
 
-Some text maybe?
+The file is \texttt{background.png} -- it can be replaced by any file
+\alert{as long
+as} the replacement file is in the 16:10 format (for example, a 1600
+\(\times\) 1000 image).
 
 \end{frame}
 
-\frame[plain]{Thank you}
+\begin{frame}{Final slide}
+
+The final slide is blank.
+
+This is to avoid the awkward ``Switching to black'' thing that happens
+when there are no slides left.
+
+\end{frame}
+
+\section{Reproducible documents}\label{reproducible-documents}
+
+\begin{frame}[fragile]{It's in the Makefile}
+
+Documents \texttt{slides.Jmd} and \texttt{slides.Rmd} will be detected.
+
+They will be converted to \texttt{slides.md} using either
+\texttt{R}/\texttt{knitr} or \texttt{Julia}/\texttt{Weave.jl}.
+
+\end{frame}
+
+\frame[plain]{}
 
 \end{document}
