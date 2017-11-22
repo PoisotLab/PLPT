@@ -10,8 +10,13 @@ background.png: makebackground.jl
 
 .PHONY: clean install
 
-$(FILE).md: $(FILE).Jmd
-	julia -e 'using Weave; weave("$<", doctype="pandoc")'
+rmd2md: $(wildcard $(FILE).Rmd)
+	@$(if $(wildcard $(FILE).Rmd),Rscript -e "library(knitr); knit(input='$<', output='$(SOURCE)')",echo "No Rmd file found")
+
+jmd2md: $(wildcard $(FILE).Jmd)
+	@$(if $(wildcard $(FILE).Jmd),julia -e 'using Weave; weave("$<", doctype="pandoc")',echo "No Jmd file found")
+
+$(FILE).md: jmd2md rmd2md
 
 $(FILE).tex: $(FILE).md
 	pandoc $< -t beamer --slide-level 2 -o $@ --template ./template/pl.tex --highlight-style pygments
