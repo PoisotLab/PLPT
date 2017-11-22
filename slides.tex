@@ -53,8 +53,8 @@
 \newcommand{\begincols}{\begin{columns}}
 \newcommand{\stopcols}{\end{columns}}
 
-\title{EcologicalNetwork.jl}
-\subtitle{Analysis of ecological interactions}
+\title{Title}
+\subtitle{Subtitle}
 \date{\today}
 \author{Timothée Poisot}
 \institute{Université de Montréal}
@@ -63,64 +63,78 @@
 
 \maketitle
 
-\begin{frame}[fragile]{The \texttt{EcologicalNetwork} package}
+\begin{frame}[fragile]{A slide}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{using EcologicalNetwork}
-\NormalTok{data = ollerton();}
-
-\NormalTok{η(data)}
+\NormalTok{A = rand((}\FloatTok{3}\NormalTok{,}\FloatTok{3}\NormalTok{))}
+\NormalTok{sum(A)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-3-element Array{Float64,1}:
- 0.640955
- 0.646288
- 0.635621
+4.503005900373722
 \end{verbatim}
 
 \end{frame}
 
-\section{Visualising networks}\label{visualising-networks}
+\section{Plots}\label{plots}
 
-\begin{frame}[fragile]{Setting up the environment}
+\begin{frame}[fragile]{Setting things up}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{using Plots}
-\NormalTok{pgfplots()}
+\NormalTok{pyplot()}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-Plots.PGFPlotsBackend()
+Plots.PyPlotBackend()
 \end{verbatim}
 
 \end{frame}
 
-\begin{frame}[fragile]{Default plotting}
+\begin{frame}[fragile]{Columns}
 
 \begincols
 \column{0.48\textwidth}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p1 = plot(data, size=(}\FloatTok{250}\NormalTok{, }\FloatTok{100}\NormalTok{));}
-\NormalTok{savefig(p1, }\StringTok{"figures/ollerton.tex"}\NormalTok{);}
+\NormalTok{p1 = plot(}
+  \CommentTok{# These are the data}
+  \NormalTok{sort(rand(}\FloatTok{40}\NormalTok{)),}
+  \CommentTok{# This is the plot size}
+  \NormalTok{size  = (}\FloatTok{250}\NormalTok{, }\FloatTok{200}\NormalTok{),}
+  \CommentTok{# We don't want borders}
+  \NormalTok{frame = :grid,}
+  \CommentTok{# We don't want a legend}
+  \NormalTok{leg   = false}
+  \NormalTok{);}
+\NormalTok{savefig(p1, }\StringTok{"figures/scatter.pdf"}\NormalTok{);}
 \end{Highlighting}
 \end{Shaded}
 
 \hfill\column{0.48\textwidth}
 
-\input{figures/ollerton.tex}
+\includegraphics[width=\columnwidth]{figures/scatter.pdf}
 
 \stopcols
 
 \end{frame}
 
 \begin{frame}{Output}
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac turpis egestas. Morbi sollicitudin nisi vitae lorem interdum,
+eget elementum quam elementum. Curabitur quis leo eu metus consequat
+ultricies. Curabitur sit amet convallis risus. Cras vel arcu id risus
+efficitur commodo et eget velit. Curabitur consequat eleifend magna, ut
+ultricies lorem scelerisque eu. Mauris faucibus neque sit amet est
+elementum, suscipit placerat est interdum. Phasellus sed convallis est.
+Nunc fermentum convallis odio eget gravida. Duis venenatis dictum
+tempor.
 
 \end{frame}
 
