@@ -9,23 +9,18 @@
 
 \ProvidesPackage{beamerthemepl}
 
-%{{{ --- Options ----------------------
-
 \newif\if@useTitleProgressBar
 \newif\if@protectFrameTitle
 
-\@useTitleProgressBartrue
-\@protectFrameTitlefalse
+\@useTitleProgressBarfalse
+\@protectFrameTitletrue
 
-\newlength{\@mtheme@voffset}
-\setlength{\@mtheme@voffset}{1.1em}
+\newlength{\@pltheme@voffset}
+\setlength{\@pltheme@voffset}{1.1em}
 
 \DeclareOptionBeamer{noprogressbar}{\@useTitleProgressBarfalse}
-\DeclareOptionBeamer{protectframetitle}{\@protectFrameTitletrue}
-\DeclareOptionBeamer{blockbg}{%
-  \PassOptionsToPackage{blockbg}{beamercolorthemepl}%
-}
-\DeclareOptionBeamer{nooffset}{\setlength{\@mtheme@voffset}{0em}}
+\DeclareOptionBeamer{unprotectframetitle}{\@protectFrameTitlefalse}
+\DeclareOptionBeamer{nooffset}{\setlength{\@pltheme@voffset}{0em}}
 
 \DeclareOptionBeamer*{%
   \PackageWarning{beamerthemem}{Unknown option `\CurrentOption'}%
@@ -33,14 +28,16 @@
 
 \ProcessOptionsBeamer
 
-%}}}
-
 \mode<presentation>
 
-%{{{ --- Packages ---------------------
+\newcount\sobre@angcur
+\newcount\sobre@angtot \sobre@angtot360
+\newcount\sobre@framecnt
+\newcount\sobre@frametot
 
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
+\RequirePackage{xifthen}
 \RequirePackage{pgfplots}
 \RequirePackage{minted}
 \RequirePackage{graphicx}
@@ -54,15 +51,11 @@
 \usecolortheme{pl}
 \usefonttheme{pl}
 
-%}}}
-
 \newcommand{\reference}[1]{%
   \begin{tikzpicture}[remember picture, overlay]%
     \node[anchor=south west,] at (current page.south west) {\color{plFG}\tiny #1};%
   \end{tikzpicture}%
 }
-
-%{{{ --- Titlepage --------------------
 
 \pgfdeclareimage[height=1.05\paperheight]{titlebackground}{background.png}
 
@@ -89,11 +82,7 @@
 \end{picture}
 }
 
-%}}}
-%{{{ --- Progressbar ------------------
-
 \makeatletter
-\def\progressbar@sectionprogressbar{}
 \def\progressbar@titleprogressbar{}
 \newcount\progressbar@tmpcounta % auxiliary counter
 \newcount\progressbar@tmpcountb % auxiliary counter
@@ -104,35 +93,6 @@
 \progressbar@pbwd=0.3\textwidth
 \progressbar@pbht=1.2pt
 
-% the progress bar
-\def\progressbar@sectionprogressbar{%
-  {\usebeamercolor{palette quaternary}%
-    \progressbar@tmpcounta=\insertframenumber
-    \progressbar@tmpcountb=\inserttotalframenumber
-    \progressbar@tmpdim=\progressbar@pbwd
-    \divide\progressbar@tmpdim by 100
-    \multiply\progressbar@tmpdim by \progressbar@tmpcounta
-    \divide\progressbar@tmpdim by \progressbar@tmpcountb
-    \multiply\progressbar@tmpdim by 100
-
-    \fontsize{1em}{1em}\selectfont
-
-    \makebox[\textwidth][c]{
-      \begin{tikzpicture}[tight background]
-
-        \node[anchor=south west, fg, inner sep=0pt, text width=\progressbar@pbwd] at (0pt, 0pt) {\thesection\color{plFG!20!plBG}. \color{plAC!15!plFG}\large\bfseries\insertsectionHEAD\par};
-
-        \vspace{\@mtheme@voffset}%
-
-        \draw[palette quaternary.bg, fill=palette quaternary.bg, rounded corners = 0.1pt]
-        (0, -2ex) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
-
-        \draw[palette quaternary.fg, fill=palette quaternary.fg, rounded corners = 0.1pt]
-        (0, -2ex) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
-      \end{tikzpicture}%
-    }
-  }
-}
 
 \if@useTitleProgressBar
 \def\progressbar@titleprogressbar{%
@@ -177,7 +137,75 @@
 
 %}}}
 
-%{{{ --- Sections ---------------------
+
+\makeatletter
+\newif\ifbeamer%
+\pgfkeys{/visual counter/.cd,
+ thickness/.store in=\thickness,
+ thickness=0.4ex,
+ radius/.store in=\radius,
+ radius=1.2ex,
+ segment distance/.store in=\segdist,
+ segment distance=8,
+ color current frame/.store in=\colcurrframe,
+ color current frame=plST!45,
+ color old frame/.store in=\cololdframe,
+ color old frame=plST,
+ color next frame/.store in=\colnextframe,
+ color next frame=plFG!15,
+ current value/.store in=\currentv,
+ current value=1,
+ total value/.store in=\totalv,
+ total value=5,
+ beamer/.is if=beamer,
+ beamer/.default=false,
+ countdown/.code={
+    \begin{tikzpicture}[fill color/.style={}]
+    \ifbeamer
+     \pgfkeys{/visual counter/.cd,
+       current value=\insertframenumber,
+       total value=\inserttotalframenumber,
+     }
+    \fi
+    \def\current{\currentv}
+    \def\tot{\totalv}
+    \def\radiusout{\radius}
+    \def\radiusin{\radius-\thickness}
+
+    \foreach \s[] in {1,...,\tot}
+    {
+      \ifnum\s>\current%
+        \tikzset{fill color/.append style={\colnextframe}}%
+      \fi%
+      \ifnum\s=\current%
+        \tikzset{fill color/.append style={\colcurrframe}}%
+      \fi%
+      \ifnum\s<\current%
+        \tikzset{fill color/.append style={\cololdframe}}%
+      \fi%
+      \fill[fill color]
+        ({90-360/\tot * (\s - 1)-\segdist}:\radiusout) arc
+        ({90-360/\tot * (\s - 1)-\segdist}:{90-360/\tot * (\s)+\segdist}:\radiusout) --
+        ({90-360/\tot * (\s)+\segdist}:\radiusin) arc
+        ({90-360/\tot * (\s)+\segdist}:{90-360/\tot * (\s - 1)-\segdist}:\radiusin);
+    }
+    \end{tikzpicture}
+ }
+}
+
+\newcommand{\setvcoptions}[1]{
+\pgfkeys{/visual counter/.cd,#1}
+}
+\newcommand{\addvisualcounter}{%
+\tikz\node[/visual counter/.cd, beamer=true,countdown]{};
+}
+
+
+% Let's change some options:
+\setvcoptions{
+ segment distance=4,
+ thickness=0.3ex
+}
 
 % Insert frame with section title at every section start
 \AtBeginSection[]
@@ -192,7 +220,7 @@
         \put(-28.5,-175){\tikz \fill [plBG] (1,1) rectangle (13,12);}%
         \put(0,-145){%
           \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
-            \progressbar@sectionprogressbar%
+            {\itshape\color{plFG!50!plBG}\thesection}\\[0.2pt]\color{plST}\Large\mdseries\insertsectionHEAD
           \end{minipage}
         }
       \end{picture}
@@ -201,21 +229,14 @@
 }
 
 
-%}}}
-
-%{{{ --- Captions ---------------------
-
 \setbeamertemplate{caption label separator}{: }
 \setbeamertemplate{caption}[numbered]
 
-%}}}
-
-%{{{ --- Footline/footnote ------------
 
 \usenavigationsymbolstemplate{}
 \setbeamertemplate{footline}
 {%
-\vspace{\@mtheme@voffset}
+\vspace{\@pltheme@voffset}
 }
 
 \setbeamertemplate{footnote}
@@ -225,28 +246,18 @@
   \usebeamercolor{footnote}\hbox to 0.8em{\hfil\insertfootnotemark}\insertfootnotetext\par%
 }
 
-%}}}
-
-%{{{ --- Frametitle -------------------
-
 \setbeamertemplate{frametitle}{%
-\vspace{\@mtheme@voffset}%
+\vspace{\@pltheme@voffset}%
 \if@protectFrameTitle%
 \usebeamerfont{frametitle}\protect\MakeUppercase{\insertframetitle}\\
 \else%
 \usebeamerfont{frametitle}\MakeUppercase{\insertframetitle}\\
 \fi%
-\if@useTitleProgressBar%
-\vspace{\@mtheme@voffset}%
-\begin{beamercolorbox}[wd=\textwidth,ht=1pt,dp=0pt]{frametitle}%
-  \progressbar@titleprogressbar%
-\end{beamercolorbox}%
-\fi%
-\vspace{\@mtheme@voffset}%
+\begin{picture}(0,0)
+\put(-24.5, 7.5){\addvisualcounter}
+\end{picture}
+\vspace{\@pltheme@voffset}%
 }
-
-%}}}
-%{{{ Styles
 
 \pgfplotsset{
   compat=1.12,
@@ -279,15 +290,10 @@
   }
 }
 
-%}}}
-
 \mode<all>
 
-%{{{ misc
 \let\otp\titlepage
 \renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
 \newcommand{\mreducelistspacing}{\vspace{-\topsep}}
 
 \linespread{1.15}
-
-%}}}

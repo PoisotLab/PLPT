@@ -255,6 +255,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothand
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex
@@ -316,10 +324,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
