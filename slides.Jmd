@@ -8,10 +8,16 @@ date: \today
 
 ## A slide
 
-```julia
-A = rand((3,3))
-sum(A)
+```julia; echo=false
+using Distributions
+using Plots
+pyplot()
+a = sort(rand(100).-0.5)
+pl = plot(a, size=(400, 200), leg=false, frame=:origin)
+savefig(pl, "figures/density.pdf")
 ```
+
+\includegraphics[height=\textheight]{figures/density.pdf}
 
 # Plots
 
