@@ -11,11 +11,9 @@ date: \today
 
 
 
-\includegraphics[width=\textwidth]{figures/density.pdf}
+\includegraphics[width=\textwidth]{figures/density.png}
 
 ## A frame with maths
-
-The *Zilla Slab* font has some degree of math support:
 
 $$
 \frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alpha N\right)
