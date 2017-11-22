@@ -8,19 +8,10 @@ date: \today
 
 ## A slide
 
-~~~~{.julia}
-A = rand((3,3))
-sum(A)
-~~~~~~~~~~~~~
-
-
-~~~~
-5.24813268142187
-~~~~
 
 
 
-
+\includegraphics[height=\textheight]{figures/density.pdf}
 
 # Plots
 
@@ -83,3 +74,5 @@ dictum tempor.
 # Some code
 
 ## Default plotting
+
+Some text maybe?

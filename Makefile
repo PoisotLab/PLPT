@@ -5,6 +5,9 @@ OUTPUT=$(FILE)_final.pdf
 
 all: $(OUTPUT)
 
+background.png: makebackground.jl
+	julie $<
+
 .PHONY: clean install
 
 $(FILE).md: $(FILE).Jmd
