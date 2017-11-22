@@ -449,13 +449,6 @@ INPUT slides.nav
 INPUT background.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT figures/density.pdf
-INPUT background.png
-OUTPUT slides.vrb
-INPUT slides.vrb
-INPUT slides.vrb
-OUTPUT slides.vrb
-INPUT slides.vrb
-INPUT slides.vrb
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -477,6 +470,13 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT background.png
+OUTPUT slides.vrb
+INPUT slides.vrb
+INPUT slides.vrb
+OUTPUT slides.vrb
+INPUT slides.vrb
+INPUT slides.vrb
 INPUT figures/scatter.pdf
 INPUT background.png
 OUTPUT slides.nav

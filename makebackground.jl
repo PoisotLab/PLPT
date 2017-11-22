@@ -24,7 +24,7 @@ sethue("#00897B")
 circle.(points, 6.*rand(N).+2.0, :fill)
 for i in 1:(N-1)
 	for j in (i+1):N
-		if dxy[i,j] < 110
+		if dxy[i,j] < 120
 			if rand() < 0.7
 				line(points[i], points[j], :stroke)
 			end

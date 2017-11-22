@@ -11,7 +11,17 @@ date: \today
 
 
 
-\includegraphics[height=\textheight]{figures/density.pdf}
+\includegraphics[width=\textwidth]{figures/density.pdf}
+
+## A frame with maths
+
+The *Zilla Slab* font has some degree of math support:
+
+$$
+\frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alpha N\right)
+$$
+
+What about symbols, $B_x \forall x \in \sum_i k_i \leq 2$, and integration $x = \int_i^\infty y_i$?
 
 # Plots
 
