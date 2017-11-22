@@ -2,8 +2,10 @@ using Luxor
 
 N = 50
 paper_dim = [16 10]
-scaling = 1000
-xy = rand(Float64, (N, 2)).*paper_dim
+scaling = 100
+
+xy = (rand(Float64, (N, 2)).*paper_dim.-paper_dim./2).*scaling
+
 
 # Points
 points = [Point(xy[i,1], xy[i,2]) for i in 1:N]
@@ -16,8 +18,16 @@ dxy = sqrt.(dx.^2 .+ dy.^2)
 Drawing(paper_dim[1]*scaling, paper_dim[2]*scaling, "background.png")
 origin()
 background("black")
-sethue("red")
-circle.(points, 4, :fill)
+sethue("white")
+circle.(points, 6, :fill)
+circle.(points, 6.+rand(N).*6, :stroke)
+for i in 1:(N-1)
+	for j in (i+1):N
+		if dxy[i,j] < 300
+			line(points[i], points[j], :stroke)
+		end
+	end
+end
 finish()
 preview()
 
