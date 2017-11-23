@@ -2,6 +2,7 @@
 
 \usetheme{pl}
 
+\usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{minted}
 \usepackage{listings}
@@ -122,6 +123,27 @@ The background is off-white: it will \emph{look} like it's white, but
 with less eyestrain.
 
 The foreground is not-quite-black either.
+
+\end{frame}
+
+\begin{frame}[fragile]{Tables}
+
+\begin{longtable}[]{@{}llrlc@{}}
+\toprule
+PID & COMMAND & \%CPU & TIME & \#TH\tabularnewline
+\midrule
+\endhead
+25645 & \texttt{top} & 16.3 & 00:02.03 & 1/1\tabularnewline
+25642 & \texttt{bash} & 0.0 & 00:00.01 & 1\tabularnewline
+25641 & \texttt{login} & 0.0 & 00:00.02 & 2\tabularnewline
+25634 & \texttt{mdworker} & 0.0 & 00:00.07 & 3\tabularnewline
+25624 & \texttt{mdworker} & 0.0 & 00:00.14 & 4\tabularnewline
+25591 & \texttt{mdworker} & 0.0 & 00:00.14 & 3\tabularnewline
+25571 & \texttt{com.apple.iC} & 0.0 & 00:00.31 & 5\tabularnewline
+25414 & \texttt{installd} & 0.0 & 00:00.52 & 2\tabularnewline
+25366 & \texttt{com.apple.We} & 0.0 & 00:00.07 & 4\tabularnewline
+\bottomrule
+\end{longtable}
 
 \end{frame}
 

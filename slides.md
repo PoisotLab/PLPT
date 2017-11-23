@@ -37,6 +37,20 @@ eyestrain.
 
 The foreground is not-quite-black either.
 
+## Tables
+
+| PID   | COMMAND        | %CPU | TIME     | #TH |
+|:------|:---------------|-----:|:---------|:---:|
+| 25645 | `top`          | 16.3 | 00:02.03 | 1/1 |
+| 25642 | `bash`         |  0.0 | 00:00.01 |  1  |
+| 25641 | `login`        |  0.0 | 00:00.02 |  2  |
+| 25634 | `mdworker`     |  0.0 | 00:00.07 |  3  |
+| 25624 | `mdworker`     |  0.0 | 00:00.14 |  4  |
+| 25591 | `mdworker`     |  0.0 | 00:00.14 |  3  |
+| 25571 | `com.apple.iC` |  0.0 | 00:00.31 |  5  |
+| 25414 | `installd`     |  0.0 | 00:00.52 |  2  |
+| 25366 | `com.apple.We` |  0.0 | 00:00.07 |  4  |
+
 ## Using images
 
 \includegraphics[width=\textwidth]{figures/density.pdf}
