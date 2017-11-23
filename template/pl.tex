@@ -1,4 +1,4 @@
-\documentclass[11pt, compress, aspectratio=1610, serif]{beamer}
+\documentclass[11pt, compress, aspectratio=1610]{beamer}
 
 \usetheme{pl}
 
@@ -82,6 +82,12 @@
 
 $body$
 
-\frame[plain]{}
+\begin{frame}[plain]
+  \begin{picture}(0,0)
+    \put(-28.5,-175){%
+      \pgfuseimage{titlebackground}
+    }
+  \end{picture}
+\end{frame}
 
 \end{document}

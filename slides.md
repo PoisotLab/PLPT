@@ -17,7 +17,7 @@ date: \today
 The document uses the \alert{Input} family:
 
 Main body
-: Input Sans Condensed
+: Input Sans (or Serif) Condensed
 
 Maths
 : $\text{Input Sans Narrow}$
@@ -67,9 +67,9 @@ They are first-level headers in markdown:
 Slide content
 ~~~
 
-## Other things
+## Code highlighting
 
-We can use \alert{unicode characters} in code:
+There is a customized color scheme for code highlighting.
 
 ~~~ julia
 α = 2.0
@@ -80,8 +80,7 @@ for i in 1:10
 end
 ~~~
 
-This is useful as `Julia` supports it. There is also a customized color scheme
-for code highlighting.
+We can also use \alert{unicode characters}.
 
 ## Visual counter
 
@@ -103,7 +102,8 @@ dictum tempor.
 
 ## Background image
 
-The background image is generated from the `makebackground.jl` file.
+The background image is generated from the `makebackground.jl` file. It's the
+k-nearest neighbour graph of a series of random points.
 
 The file is `background.png` -- it can be replaced by any file \alert{as long
 as} the replacement file is in the 16:10 format (for example, a 1600 $\times$
@@ -111,7 +111,7 @@ as} the replacement file is in the 16:10 format (for example, a 1600 $\times$
 
 ## Final slide
 
-The final slide is blank.
+The final slide displays the background picture.
 
 This is to avoid the awkward "Switching to black" thing that happens when there
 are no slides left.

@@ -83,36 +83,7 @@
 }
 
 \makeatletter
-\def\progressbar@titleprogressbar{}
-\newcount\progressbar@tmpcounta % auxiliary counter
-\newcount\progressbar@tmpcountb % auxiliary counter
-\newdimen\progressbar@pbht      % progressbar height
-\newdimen\progressbar@pbwd      % progressbar width
-\newdimen\progressbar@tmpdim    % auxiliary dimension
 
-\progressbar@pbwd=0.3\textwidth
-\progressbar@pbht=1.2pt
-
-
-\if@useTitleProgressBar
-\def\progressbar@titleprogressbar{%
-  \progressbar@tmpcounta=\insertframenumber
-  \progressbar@tmpcountb=\inserttotalframenumber
-  \progressbar@tmpdim=0.5\textwidth
-  \divide\progressbar@tmpdim by 100
-  \multiply\progressbar@tmpdim by \progressbar@tmpcounta
-  \divide\progressbar@tmpdim by \progressbar@tmpcountb
-  \multiply\progressbar@tmpdim by 100
-  {%
-    \usebeamercolor{palette quaternary}%
-    \begin{tikzpicture}[tight background]
-      \draw[palette quaternary.bg, fill=palette quaternary.bg, rounded corners = 0.1pt] (0, 0) rectangle ($(\progressbar@pbwd, \progressbar@pbht) - (0, 0)$);
-      \draw[palette quaternary.fg, fill=palette quaternary.fg, rounded corners = 0.1pt] (0, 0) rectangle (\progressbar@tmpdim, \progressbar@pbht);
-    \end{tikzpicture}%
-  }%
-}
-\fi
-%}}}
 %{{{ --- Commands ---------------------
 
 \newcommand{\insertsectionHEAD}{%
@@ -203,8 +174,8 @@
 
 % Let's change some options:
 \setvcoptions{
- segment distance=4,
- thickness=0.3ex
+ segment distance=8,
+ thickness=0.6ex
 }
 
 % Insert frame with section title at every section start
@@ -220,7 +191,7 @@
         \put(-28.5,-175){\tikz \fill [plBG] (1,1) rectangle (13,12);}%
         \put(0,-145){%
           \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
-            {\small\color{plFG!50!plBG}\MakeUppercase{Part \thesection}}\\[0.2pt]\color{plST}\Large\mdseries\insertsectionHEAD
+            {\small\color{plFG!50!plBG}\MakeUppercase{\sffamily§ \thesection}}\\[0.2pt]\color{plST}\Large\mdseries\insertsectionHEAD
           \end{minipage}
         }
       \end{picture}

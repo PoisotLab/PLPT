@@ -1,4 +1,4 @@
-\documentclass[11pt, compress, aspectratio=1610, serif]{beamer}
+\documentclass[11pt, compress, aspectratio=1610]{beamer}
 
 \usetheme{pl}
 
@@ -102,7 +102,7 @@ The document uses the \alert{Input} family:
 \begin{description}
 \tightlist
 \item[Main body]
-Input Sans Condensed
+Input Sans (or Serif) Condensed
 \item[Maths]
 \(\text{Input Sans Narrow}\)
 \item[Code]
@@ -164,9 +164,9 @@ They are first-level headers in markdown:
 
 \end{frame}
 
-\begin{frame}[fragile]{Other things}
+\begin{frame}[fragile]{Code highlighting}
 
-We can use \alert{unicode characters} in code:
+There is a customized color scheme for code highlighting.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -179,8 +179,7 @@ We can use \alert{unicode characters} in code:
 \end{Highlighting}
 \end{Shaded}
 
-This is useful as \texttt{Julia} supports it. There is also a customized
-color scheme for code highlighting.
+We can also use \alert{unicode characters}.
 
 \end{frame}
 
@@ -210,7 +209,7 @@ tempor.
 \begin{frame}[fragile]{Background image}
 
 The background image is generated from the \texttt{makebackground.jl}
-file.
+file. It's the k-nearest neighbour graph of a series of random points.
 
 The file is \texttt{background.png} -- it can be replaced by any file
 \alert{as long
@@ -221,7 +220,7 @@ as} the replacement file is in the 16:10 format (for example, a 1600
 
 \begin{frame}{Final slide}
 
-The final slide is blank.
+The final slide displays the background picture.
 
 This is to avoid the awkward ``Switching to black'' thing that happens
 when there are no slides left.
@@ -239,6 +238,12 @@ They will be converted to \texttt{slides.md} using either
 
 \end{frame}
 
-\frame[plain]{}
+\begin{frame}[plain]
+  \begin{picture}(0,0)
+    \put(-28.5,-175){%
+      \pgfuseimage{titlebackground}
+    }
+  \end{picture}
+\end{frame}
 
 \end{document}
