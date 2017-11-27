@@ -6,7 +6,6 @@ scaling = 150
 
 xy = (rand(Float64, (N, 2)).*paper_dim.-paper_dim./2).*scaling
 
-
 # Points
 points = [Point(xy[i,1], xy[i,2]) for i in 1:N]
 
