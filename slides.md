@@ -41,7 +41,7 @@ The default font theme is sans serif. You can change the `template/pl.tex` first
 
 ## Colors
 
-The structure elements are in teal, inline code is in `blue`, and alerted text
+The structure elements are in green, inline code is in `blue`, and alerted text
 in \alert{orange}.
 
 The background is off-white: it will *look* like it's white, but with less
