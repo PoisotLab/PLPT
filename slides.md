@@ -14,18 +14,30 @@ date: \today
 
 ## Fonts and spacing
 
-The document uses the \alert{Input} family:
+The document uses the \alert{Noto} family -- <https://www.google.com/get/noto/>
 
 Main body
-: Input Sans (or Serif) Condensed
+: Noto Sans (or Serif)
 
 Maths
-: $\text{Input Sans Narrow}$
+: $\text{Noto Sans}$
 
 Code
-: `Input Mono Compressed`
+: `Noto Mono`
 
 The linespread value has been increased to about $1.3$
+
+## Serif font theme
+
+The default font theme is sans serif. You can change the `template/pl.tex` first line to:
+
+~~~ latex
+@@ -1,4 +1,4 @@
+-\documentclass[11pt, compress, aspectratio=1610]{beamer}
++\documentclass[11pt, compress, aspectratio=1610, serif]{beamer}
+
+\usetheme{pl}
+~~~
 
 ## Colors
 
@@ -90,6 +102,7 @@ There is a customized color scheme for code highlighting.
 b, c = "abc", 'c'
 # This code does nothing (useful)
 for i in 1:10
+  rand()
   @elapsed println("i:\t$i")
 end
 ~~~

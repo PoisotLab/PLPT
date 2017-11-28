@@ -147,12 +147,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/translator/translator.sty
@@ -211,7 +205,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
@@ -471,10 +464,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 OUTPUT slides.vrb
 INPUT slides.vrb
 INPUT slides.vrb
-INPUT background.png
-OUTPUT slides.vrb
-INPUT slides.vrb
-INPUT slides.vrb
 OUTPUT slides.vrb
 INPUT slides.vrb
 INPUT slides.vrb
@@ -499,6 +488,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+OUTPUT slides.vrb
+INPUT slides.vrb
+INPUT slides.vrb
 OUTPUT slides.vrb
 INPUT slides.vrb
 INPUT slides.vrb
