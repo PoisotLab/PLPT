@@ -150,3 +150,39 @@ are no slides left.
 Documents `slides.Jmd` and `slides.Rmd` will be detected.
 
 They will be converted to `slides.md` using either `R`/`knitr` or `Julia`/`Weave.jl`.
+
+# Specific commands
+
+## Cropped images
+
+\begincols
+\column{0.68\textwidth}
+
+The `roundpicture` command will display a picture, resized to fit into a circle:
+
+~~~ latex
+\roundpicture{images/nb.png}{Optional text}
+~~~
+
+Note that the image \alert{must} be a square.
+
+\hfill\column{0.28\textwidth}
+
+\roundpicture{images/nb.png}{}
+
+\stopcols
+
+## Plain slide
+
+This will create a plain slide:
+
+~~~ markdown
+## {.plain}
+
+\plain{This is large text on the background image.}
+~~~
+
+Note that the text within the `\plain` command \alert{must be \LaTeX}.
+
+## {.plain}
+\plain{This is large text on the background image.}

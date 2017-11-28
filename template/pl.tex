@@ -1,4 +1,4 @@
-\documentclass[11pt, compress, aspectratio=1610, serif]{beamer}
+\documentclass[11pt, compress, aspectratio=1610]{beamer}
 
 \usetheme{pl}
 
@@ -70,6 +70,30 @@
 
 \newcommand{\begincols}{\begin{columns}}
 \newcommand{\stopcols}{\end{columns}}
+\newcommand{\roundpicture}[2]{%
+\tikz\node[circle,
+          text=white,
+          minimum width=4cm,
+          minimum height=4cm,
+          path picture={
+              \node at (path picture bounding box.center){
+                  \includegraphics[width=4cm]{#1}
+              };
+          }]{#2};
+}
+\newcommand{\plain}[1]{%
+\begin{picture}(0,0)
+  \put(-28.5,-175){%
+      \pgfuseimage{titlebackground}
+  }
+  \put(0,-145){%
+      \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+          \color{white}\huge
+              #1
+      \end{minipage}
+  }
+\end{picture}
+}
 
 \title{$title$}
 \subtitle{$subtitle$}

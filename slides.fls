@@ -147,6 +147,12 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/filehook/filehook.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/translator/translator.sty
@@ -205,6 +211,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
@@ -467,8 +474,8 @@ INPUT slides.vrb
 OUTPUT slides.vrb
 INPUT slides.vrb
 INPUT slides.vrb
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
@@ -515,6 +522,15 @@ INPUT background.png
 OUTPUT slides.vrb
 INPUT slides.vrb
 INPUT slides.vrb
+INPUT background.png
+OUTPUT slides.vrb
+INPUT slides.vrb
+INPUT slides.vrb
+INPUT images/nb.png
+OUTPUT slides.vrb
+INPUT slides.vrb
+INPUT slides.vrb
+INPUT background.png
 INPUT background.png
 OUTPUT slides.nav
 OUTPUT slides.toc

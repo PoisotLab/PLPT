@@ -1,4 +1,4 @@
-\documentclass[11pt, compress, aspectratio=1610, serif]{beamer}
+\documentclass[11pt, compress, aspectratio=1610]{beamer}
 
 \usetheme{pl}
 
@@ -70,6 +70,30 @@
 
 \newcommand{\begincols}{\begin{columns}}
 \newcommand{\stopcols}{\end{columns}}
+\newcommand{\roundpicture}[2]{%
+\tikz\node[circle,
+          text=white,
+          minimum width=4cm,
+          minimum height=4cm,
+          path picture={
+              \node at (path picture bounding box.center){
+                  \includegraphics[width=4cm]{#1}
+              };
+          }]{#2};
+}
+\newcommand{\plain}[1]{%
+\begin{picture}(0,0)
+  \put(-28.5,-175){%
+      \pgfuseimage{titlebackground}
+  }
+  \put(0,-145){%
+      \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+          \color{white}\huge
+              #1
+      \end{minipage}
+  }
+\end{picture}
+}
 
 \title{Beamer template}
 \subtitle{Using pandoc, knitr, Weave, etc\ldots{}}
@@ -276,6 +300,55 @@ Documents \texttt{slides.Jmd} and \texttt{slides.Rmd} will be detected.
 
 They will be converted to \texttt{slides.md} using either
 \texttt{R}/\texttt{knitr} or \texttt{Julia}/\texttt{Weave.jl}.
+
+\end{frame}
+
+\section{Specific commands}\label{specific-commands}
+
+\begin{frame}[fragile]{Cropped images}
+
+\begincols
+\column{0.68\textwidth}
+
+The \texttt{roundpicture} command will display a picture, resized to fit
+into a circle:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\textbackslash{}roundpicture}\NormalTok{\{images/nb.png\}\{Optional text\}}
+\end{Highlighting}
+\end{Shaded}
+
+Note that the image \alert{must} be a square.
+
+\hfill\column{0.28\textwidth}
+
+\roundpicture{images/nb.png}{}
+
+\stopcols
+
+\end{frame}
+
+\begin{frame}[fragile]{Plain slide}
+
+This will create a plain slide:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{## \{.plain\}}
+
+\NormalTok{\textbackslash{}plain\{This is large text on the background image.\}}
+\end{Highlighting}
+\end{Shaded}
+
+Note that the text within the \texttt{\textbackslash{}plain} command
+\alert{must be \LaTeX}.
+
+\end{frame}
+
+\begin{frame}[plain]{}
+
+\plain{This is large text on the background image.}
 
 \end{frame}
 
