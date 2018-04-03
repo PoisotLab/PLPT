@@ -27,7 +27,7 @@ for i in 1:(N-1)
 	end
 end
 
-color_teal = ["#00796B", "#00897B", "#009688"]
+col_teal = ["#00796B", "#00897B", "#009688"]
 col_indigo = ["#303F9F", "#3949AB", "#3F51B5"]
 col_red = ["#D32F2F", "#E53935", "#F44336"]
 col_purple = ["#7B1FA2", "#8E24AA", "#9C27B0"]
