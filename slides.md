@@ -14,16 +14,16 @@ date: \today
 
 ## Fonts and spacing
 
-The document uses the \alert{Noto} family -- <https://www.google.com/get/noto/>
+The document uses the \alert{Google Crosscore} family
 
 Main body
-: Noto Sans (or Serif)
+: Tinos or Arimo
 
 Maths
-: $\text{Noto Sans}$
+: $\text{Tinos}$
 
 Code
-: `Noto Mono`
+: `Cousine`
 
 The linespread value has been increased to about $1.3$
 

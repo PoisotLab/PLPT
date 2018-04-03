@@ -33,7 +33,7 @@ col_red = ["#D32F2F", "#E53935", "#F44336"]
 col_purple = ["#7B1FA2", "#8E24AA", "#9C27B0"]
 col_green = ["#388E3C", "#43A047", "#4CAF50"]
 
-col = col_green
+col = col_teal
 
 Drawing(paper_dim[1]*scaling, paper_dim[2]*scaling, "background.png")
 origin()
