@@ -8,3 +8,4 @@ _minted*/
 *.vrb
 *.fls
 *.fdb_latexmk
+cache/
