@@ -53,7 +53,7 @@
 
 \newcommand{\reference}[1]{%
   \begin{tikzpicture}[remember picture, overlay]%
-    \node[anchor=south west,] at (current page.south west) {\color{plFG}\tiny #1};%
+    \node[anchor=south west,] at (current page.south west) {\color{foregroundcolor}\tiny #1};%
   \end{tikzpicture}%
 }
 
@@ -68,10 +68,9 @@
   \put(-28.5,-175){%
       \pgfuseimage{titlebackground}
   }
-  \put(398, 100){\color{white}\tiny\ccby}%
+  \put(398, 100){\color{black}\tiny\ccby}%
   \put(0,-145){%
       \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
-          \color{white}
               {\usebeamerfont{title}\inserttitle\\[0.2cm]}
               {\usebeamerfont{subtitle}\insertsubtitle\\[0.9cm]}
               \vfill
@@ -119,11 +118,11 @@
  segment distance/.store in=\segdist,
  segment distance=8,
  color current frame/.store in=\colcurrframe,
- color current frame=plST!45,
+ color current frame=structurecolor!45,
  color old frame/.store in=\cololdframe,
- color old frame=plST,
+ color old frame=structurecolor,
  color next frame/.store in=\colnextframe,
- color next frame=plFG!15,
+ color next frame=foregroundcolor!15,
  current value/.store in=\currentv,
  current value=1,
  total value/.store in=\totalv,
@@ -174,8 +173,8 @@
 
 % Let's change some options:
 \setvcoptions{
- segment distance=7,
- thickness=0.4ex
+ segment distance=2,
+ thickness=0.2ex
 }
 
 % Insert frame with section title at every section start
@@ -188,10 +187,10 @@
         \put(-28.5,-175){%
           \pgfuseimage{titlebackground}
         }
-        \put(-28.5,-175){\tikz \fill [plBG] (1,1) rectangle (13,12);}%
+        \put(-28.5,-175){\tikz \fill [backgroundcolor] (1,1) rectangle (13,12);}%
         \put(0,-145){%
           \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
-            {\small\color{plFG!50!plBG}\MakeUppercase{\sffamily§ \thesection}}\\[0.2pt]\color{plST}\Large\mdseries\insertsectionHEAD
+            {\small\color{foregroundcolor!50!backgroundcolor}\MakeUppercase{\sffamily§ \thesection}}\\[0.2pt]\color{structurecolor}\Large\mdseries\insertsectionHEAD
           \end{minipage}
         }
       \end{picture}
@@ -237,7 +236,7 @@
   every axis/.append style={
     line width=0.2pt,
     font=\normalsize\bfseries\rmfamily,
-    plFG,
+    foregroundcolor,
   },
   xlabel style={
      at={(ticklabel cs:0)},
@@ -249,11 +248,11 @@
   },
   tick label style={
     font=\small\mdseries,
-    plFG,
+    foregroundcolor,
   },
   major grid style={
     dotted,
-    plFG!50!plBG
+    foregroundcolor!50!backgroundcolor
   },
   disable thousands separator/.style={
     /pgf/number format/.cd,

@@ -25,50 +25,50 @@
 %}}}
 %{{{ --- Colors ---------------------
 
-\definecolor{plBG}{HTML}{FDFDFD}
-\definecolor{plFG}{HTML}{263238}
+\definecolor{backgroundcolor}{HTML}{FCFCFC}
+\definecolor{foregroundcolor}{HTML}{162228}
 
-\definecolor{plST}{HTML}{388E3C}
-\definecolor{plAC}{HTML}{F57C00}
-\definecolor{plTT}{HTML}{03A9F4}
+\definecolor{structurecolor}{HTML}{020304}
+\definecolor{accentcolor}{HTML}{F57C00}
+\definecolor{codecolor}{HTML}{03A9F4}
 
-\setbeamercolor{palette primary}{fg=plFG, bg=plBG}
-\setbeamercolor{palette secondary}{fg=plFG, bg=plBG}
-\setbeamercolor{palette tertiary}{fg=plST, bg=plBG}
-\setbeamercolor{palette quaternary}{bg=plFG!15!plBG, fg=plST!50!plBG}
+\setbeamercolor{palette primary}{fg=foregroundcolor, bg=backgroundcolor}
+\setbeamercolor{palette secondary}{fg=foregroundcolor, bg=backgroundcolor}
+\setbeamercolor{palette tertiary}{fg=structurecolor, bg=backgroundcolor}
+\setbeamercolor{palette quaternary}{bg=foregroundcolor!15!backgroundcolor, fg=structurecolor!50!backgroundcolor}
 
 \setbeamercolor{title}{parent=palette tertiary}
-\setbeamercolor{subtitle}{parent=palette primary, fg=plAC}
+\setbeamercolor{subtitle}{parent=palette primary, fg=accentcolor!20}
 \setbeamercolor{author}{parent=palette secondary}
 \setbeamercolor{date}{parent=palette primary}
 \setbeamercolor{institute}{parent=palette primary}
 
-\setbeamercolor{structure}{fg=plST}
+\setbeamercolor{structure}{fg=structurecolor}
 
-\setbeamercolor{section title}{parent=palette primary, fg=plAC}
-\setbeamercolor{frametitle}{fg=plAC!15!plFG}
+\setbeamercolor{section title}{parent=palette primary, fg=accentcolor}
+\setbeamercolor{frametitle}{fg=accentcolor!15!foregroundcolor}
 \setbeamercolor{background canvas}{parent=palette primary}
 
 \setbeamertemplate{background canvas}{%
    \ifnumequal{\c@framenumber}{0}{%
-   \color{plBG}\rule{\paperwidth}{\paperheight}%
+   \color{backgroundcolor}\rule{\paperwidth}{\paperheight}%
    }{%
       \ifnumequal{\c@framenumber}{\inserttotalframenumber}{
          % Last frame
-         \color{plBG}\rule{\paperwidth}{\paperheight}
+         \color{backgroundcolor}\rule{\paperwidth}{\paperheight}
       }{%
          % Other frames
-         \color{plBG}\rule{\paperwidth}{\paperheight}
+         \color{backgroundcolor}\rule{\paperwidth}{\paperheight}
       }%
    }%
 }
 
-\setbeamercolor{normal text}{fg=plFG}
-\setbeamercolor{alerted text}{fg=plAC}
+\setbeamercolor{normal text}{fg=foregroundcolor}
+\setbeamercolor{alerted text}{fg=accentcolor}
 
-\setbeamercolor{footnote}{fg=plST}
+\setbeamercolor{footnote}{fg=structurecolor}
 \setbeamercolor{footnote mark}{fg=.}
-\setbeamercolor{page number in head/foot}{fg=plST}
+\setbeamercolor{page number in head/foot}{fg=structurecolor}
 
 \if@beamer@pl@blockbg
 

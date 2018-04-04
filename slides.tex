@@ -1,4 +1,4 @@
-\documentclass[12pt, compress, aspectratio=1610]{beamer}
+\documentclass[11pt, compress, aspectratio=1610]{beamer}
 
 \usetheme{pl}
 
@@ -60,7 +60,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \let\OldTexttt\texttt
-\renewcommand{\texttt}[1]{\OldTexttt{\color{plTT}#1}}
+\renewcommand{\texttt}[1]{\OldTexttt{\color{codecolor}#1}}
 
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -122,17 +122,16 @@
 
 \begin{frame}[fragile]{Fonts and spacing}
 
-The document uses the \alert{Noto} family --
-\url{https://www.google.com/get/noto/}
+The document uses the \alert{Google Crosscore} family
 
 \begin{description}
 \tightlist
 \item[Main body]
-Noto Sans (or Serif)
+Tinos or Arimo
 \item[Maths]
-\(\text{Noto Sans}\)
+\(\text{Tinos}\)
 \item[Code]
-\texttt{Noto\ Mono}
+\texttt{Cousine}
 \end{description}
 
 The linespread value has been increased to about \(1.3\)

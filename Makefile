@@ -1,5 +1,5 @@
-TEXMFHOME = $(shell kpsewhich -var-value=TEXMFHOME)
-INSTALL_DIR = $(TEXMFHOME)/tex/latex/pltheme
+TEXMFHOME=$(shell kpsewhich -var-value=TEXMFHOME)
+INSTALL_DIR=$(TEXMFHOME)/tex/latex/pltheme
 FILE=slides
 OUTPUT=$(FILE)_final.pdf
 
