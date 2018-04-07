@@ -67,6 +67,18 @@ The foreground is not-quite-black either.
 
 \includegraphics[width=\textwidth]{figures/density.pdf}
 
+## PGF Plots
+
+\centering
+\begin{tikzpicture}
+  \begin{axis}[width=0.8\textwidth,height=0.6\textheight,grid=major,xlabel=$x$,ylabel=$f(x)$]
+  \addplot {-x^5 - 242};
+  \addlegendentry{model}
+  \addplot coordinates { (-4.77778,2027.60977) (-3.55556,347.84069) (-2.33333,22.58953) (-1.11111,-493.50066) (0.11111,46.66082) (1.33333,-205.56286) (2.55556,-341.40638) (3.77778,-1169.24780) (5.00000,-3269.56775) };
+  \addlegendentry{estimate}
+  \end{axis}
+\end{tikzpicture}
+
 ## Maths
 
 The Input family of fonts has some support for Greek and mathematical symbols:
